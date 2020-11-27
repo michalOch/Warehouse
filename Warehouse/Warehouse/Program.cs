@@ -39,10 +39,12 @@ namespace Warehouse
 
             var operation = Console.ReadKey();
             ItemService itemService = new ItemService();
+
             switch(operation.KeyChar)
             {
                 case '1':
-                    
+                    var keyInfo = itemService.AddNewItemView(actionService);
+                    itemService.AddNewItem(keyInfo.KeyChar);
                     break;
                 case '2':
                     break;

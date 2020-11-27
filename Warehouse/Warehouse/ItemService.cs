@@ -24,5 +24,26 @@ namespace Warehouse
             var operation = Console.ReadKey();
             return operation;
         }
+
+        public int AddNewItem(char itemType)
+        {
+            int itemTypeId;
+            Int32.TryParse(itemType.ToString(), out itemTypeId);
+            Item item = new Item();
+            item.TypeId = itemTypeId;
+
+            Console.WriteLine("Please enter id for new item: ");
+            var id = Console.ReadLine();
+            int itemId;
+            Int32.TryParse(id, out itemId);
+            item.Id = itemId;
+
+            Console.WriteLine("Please enter name for new item: ");
+            var name = Console.ReadLine();
+            item.Name = name;
+
+            Items.Add(item);
+            return itemId;
+        }
     }
 }
