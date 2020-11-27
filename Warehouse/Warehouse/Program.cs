@@ -7,12 +7,8 @@ namespace Warehouse
         static void Main(string[] args)
         {
 
-            ////b. Usunięcie przedmiotu 
             ////c. Sprawdzenie stanu magazynowego
             ////d. Zwrócenie listy przedmiotów o zadanym filtrze (nazwa kategorii)
-
-            //// b1 Zostanę poproszony o id lub nazwę produktu
-            //// b2 Usunę ten produkt z listy produktów
 
             //// c1 Zostanę poproszony o wprowadzenie id produktu
             //// c2 Wyświetle wszystkie informacje związane z tym produktem
