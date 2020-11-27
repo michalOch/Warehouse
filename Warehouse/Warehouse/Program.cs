@@ -41,10 +41,15 @@ namespace Warehouse
                     var keyInfo = itemService.AddNewItemView(actionService);
                     var id = itemService.AddNewItem(keyInfo.KeyChar);
                     break;
+
                 case '2':
+                    var removeId = itemService.RemoveItemView();
+                    itemService.RemoveItem(removeId);
                     break;
+
                 case '3':
                     break;
+
                 case '4':
                     break;
 

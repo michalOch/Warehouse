@@ -45,5 +45,31 @@ namespace Warehouse
             Items.Add(item);
             return itemId;
         }
+
+        public int RemoveItemView()
+        {
+            Console.WriteLine("Please enter id for item you want to remove: ");
+            var itemId = Console.ReadKey();
+
+            int id;
+            Int32.TryParse(itemId.KeyChar.ToString(), out id);
+
+            return id;
+        }
+
+        public void RemoveItem(int removeId)
+        {
+            Item productToRemove = new Item();
+
+            foreach (var item in Items)
+            {
+                if (item.Id == removeId)
+                {
+                    productToRemove = item;
+                    break;
+                }
+            }
+            Items.Remove(productToRemove);     
+        }
     }
 }
