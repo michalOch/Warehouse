@@ -6,15 +6,10 @@ namespace Warehouse
     {
         static void Main(string[] args)
         {
-            // Użytkownik zostanie przywitany
-            // Dostanie możliwość wyboru akcji 
-            ////a. Stworzenie nowego przedmiotu
-            ////b. Usunięcie przedmiotu
+
+            ////b. Usunięcie przedmiotu 
             ////c. Sprawdzenie stanu magazynowego
             ////d. Zwrócenie listy przedmiotów o zadanym filtrze (nazwa kategorii)
-
-            //// a1 Najpierw dostane do wybory kategorię produktu
-            //// a2 Zostanę poproszony o wprowadzenie wszystkich szczegółów dotyczących produktu
 
             //// b1 Zostanę poproszony o id lub nazwę produktu
             //// b2 Usunę ten produkt z listy produktów
@@ -44,7 +39,7 @@ namespace Warehouse
             {
                 case '1':
                     var keyInfo = itemService.AddNewItemView(actionService);
-                    itemService.AddNewItem(keyInfo.KeyChar);
+                    var id = itemService.AddNewItem(keyInfo.KeyChar);
                     break;
                 case '2':
                     break;
