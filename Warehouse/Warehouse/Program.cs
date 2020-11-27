@@ -38,10 +38,11 @@ namespace Warehouse
             }
 
             var operation = Console.ReadKey();
+            ItemService itemService = new ItemService();
             switch(operation.KeyChar)
             {
                 case '1':
-
+                    
                     break;
                 case '2':
                     break;
