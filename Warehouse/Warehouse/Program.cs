@@ -16,42 +16,45 @@ namespace Warehouse
             //// d1 Zostanę poproszony o wprowadzenie nazwy albo id kategorii produktów
             //// d2 Wyświetlę listę produktów
             ///
-            MenuActionService actionService = new MenuActionService();
-            actionService = Initialize(actionService);
-
-            Console.WriteLine("Welcome to warehouse app!");
-            Console.WriteLine("Please let me know what you want to do: ");
-
-            var mainMenu = actionService.GetMenuActionsByMenuName("Main");
-            for(int i = 0; i < mainMenu.Count; i++)
+            while(true)
             {
-                Console.WriteLine($"{mainMenu[i].Id}. {mainMenu[i].Name}");
-            }
+                MenuActionService actionService = new MenuActionService();
+                actionService = Initialize(actionService);
 
-            var operation = Console.ReadKey();
-            ItemService itemService = new ItemService();
+                Console.WriteLine("Welcome to warehouse app!");
+                Console.WriteLine("Please let me know what you want to do: ");
 
-            switch(operation.KeyChar)
-            {
-                case '1':
-                    var keyInfo = itemService.AddNewItemView(actionService);
-                    var id = itemService.AddNewItem(keyInfo.KeyChar);
-                    break;
+                var mainMenu = actionService.GetMenuActionsByMenuName("Main");
+                for(int i = 0; i < mainMenu.Count; i++)
+                {
+                    Console.WriteLine($"{mainMenu[i].Id}. {mainMenu[i].Name}");
+                }
 
-                case '2':
-                    var removeId = itemService.RemoveItemView();
-                    itemService.RemoveItem(removeId);
-                    break;
+                var operation = Console.ReadKey();
+                ItemService itemService = new ItemService();
 
-                case '3':
-                    break;
+                switch(operation.KeyChar)
+                {
+                    case '1':
+                        var keyInfo = itemService.AddNewItemView(actionService);
+                        var id = itemService.AddNewItem(keyInfo.KeyChar);
+                        break;
 
-                case '4':
-                    break;
+                    case '2':
+                        var removeId = itemService.RemoveItemView();
+                        itemService.RemoveItem(removeId);
+                        break;
 
-                default:
-                    Console.WriteLine("Action you entered does not exist");
-                    break;
+                    case '3':
+                        break;
+
+                    case '4':
+                        break;
+
+                    default:
+                        Console.WriteLine("Action you entered does not exist");
+                        break;
+                }
             }
         }
 
