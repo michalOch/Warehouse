@@ -71,5 +71,34 @@ namespace Warehouse
             }
             Items.Remove(productToRemove);     
         }
+
+        public void ItemDetailViem(int detailId)
+        {
+            Item productToShow = new Item();
+
+            foreach (var item in Items)
+            {
+                if (item.Id == detailId)
+                {
+                    productToShow = item;
+                    break;
+                }
+            }
+
+            Console.WriteLine($"Item id: {productToShow.Id}");
+            Console.WriteLine($"Item name: {productToShow.Name}");
+            Console.WriteLine($"Item type id: {productToShow.TypeId}");
+        }
+
+        public int ItemDetailSelectionView()
+        {
+            Console.WriteLine("Please enter id for item you want to show: ");
+            var itemId = Console.ReadKey();
+
+            int id;
+            Int32.TryParse(itemId.KeyChar.ToString(), out id);
+
+            return id;
+        }
     }
 }

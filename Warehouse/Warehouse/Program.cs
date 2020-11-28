@@ -16,14 +16,14 @@ namespace Warehouse
             //// d1 Zostanę poproszony o wprowadzenie nazwy albo id kategorii produktów
             //// d2 Wyświetlę listę produktów
             ///
-            while(true)
-            {
-                MenuActionService actionService = new MenuActionService();
-                actionService = Initialize(actionService);
+            MenuActionService actionService = new MenuActionService();
+            actionService = Initialize(actionService);
+            ItemService itemService = new ItemService();
+            Console.WriteLine("Welcome to warehouse app!");
 
-                Console.WriteLine("Welcome to warehouse app!");
+            while (true)
+            {        
                 Console.WriteLine("Please let me know what you want to do: ");
-
                 var mainMenu = actionService.GetMenuActionsByMenuName("Main");
                 for(int i = 0; i < mainMenu.Count; i++)
                 {
@@ -31,8 +31,7 @@ namespace Warehouse
                 }
 
                 var operation = Console.ReadKey();
-                ItemService itemService = new ItemService();
-
+                
                 switch(operation.KeyChar)
                 {
                     case '1':
@@ -46,6 +45,8 @@ namespace Warehouse
                         break;
 
                     case '3':
+                        var detailId = itemService.ItemDetailSelectionView();
+                        itemService.ItemDetailViem(detailId);
                         break;
 
                     case '4':
