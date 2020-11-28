@@ -28,7 +28,7 @@ namespace Warehouse
                 }
 
                 var operation = Console.ReadKey();
-               
+                Console.WriteLine("------------------------------------");
                 switch(operation.KeyChar)
                 {
                     case '1':

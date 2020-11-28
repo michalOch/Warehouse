@@ -22,6 +22,7 @@ namespace Warehouse
             }
 
             var operation = Console.ReadKey();
+            Console.WriteLine("------------------------------------");
             return operation;
         }
 
@@ -43,6 +44,7 @@ namespace Warehouse
             item.Name = name;
 
             Items.Add(item);
+            Console.WriteLine("------------------------------------");
             return itemId;
         }
 
@@ -50,7 +52,7 @@ namespace Warehouse
         {
             Console.WriteLine("Please enter id for item you want to remove: ");
             var itemId = Console.ReadKey();
-
+            Console.WriteLine("------------------------------------");
             int id;
             Int32.TryParse(itemId.KeyChar.ToString(), out id);
 
@@ -90,7 +92,7 @@ namespace Warehouse
         {
             Console.WriteLine("Please enter Type id for item type you want to show: ");
             var itemId = Console.ReadKey();
-
+            Console.WriteLine("------------------------------------");
             int id;
             Int32.TryParse(itemId.KeyChar.ToString(), out id);
 
