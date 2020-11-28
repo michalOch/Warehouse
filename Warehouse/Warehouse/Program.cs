@@ -7,15 +7,12 @@ namespace Warehouse
         static void Main(string[] args)
         {
 
-            ////c. Sprawdzenie stanu magazynowego
-            ////d. Zwrócenie listy przedmiotów o zadanym filtrze (nazwa kategorii)
 
-            //// c1 Zostanę poproszony o wprowadzenie id produktu
-            //// c2 Wyświetle wszystkie informacje związane z tym produktem
+            ////d. Zwrócenie listy przedmiotów o zadanym filtrze (nazwa kategorii)
 
             //// d1 Zostanę poproszony o wprowadzenie nazwy albo id kategorii produktów
             //// d2 Wyświetlę listę produktów
-            ///
+
             MenuActionService actionService = new MenuActionService();
             actionService = Initialize(actionService);
             ItemService itemService = new ItemService();
@@ -31,7 +28,7 @@ namespace Warehouse
                 }
 
                 var operation = Console.ReadKey();
-                
+               
                 switch(operation.KeyChar)
                 {
                     case '1':
