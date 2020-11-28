@@ -83,7 +83,7 @@ namespace Warehouse
                 }
             }
 
-            Console.WriteLine();
+            Console.WriteLine(toShow.ToStringTable(new[] { "Id","Name"}, a => a.Id, a => a.Name));
         }
 
         public int ItemTypeSelectionView()
