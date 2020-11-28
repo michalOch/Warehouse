@@ -47,6 +47,8 @@ namespace Warehouse
                         break;
 
                     case '4':
+                        var typeId = itemService.ItemTypeSelectionView();
+                        itemService.ItemsByTypeIdView(typeId);
                         break;
 
                     default:
